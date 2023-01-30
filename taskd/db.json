@@ -1,0 +1,44 @@
+{
+  "Employee": [
+    {
+      "id": "3",
+      "firstName": "chetan",
+      "lastName": "jadhav",
+      "eMail": "sonar@gmail.com",
+      "mobileNo": "8376575682",
+      "salary": "33000"
+    },
+    {
+      "id": "4",
+      "firstName": "harshal",
+      "lastName": "pawar",
+      "eMail": "harshal@gmail.com",
+      "mobileNo": "7578674745",
+      "salary": "25000"
+    },
+    {
+      "id": 5,
+      "firstName": "virat ",
+      "lastName": "kohli",
+      "eMail": "vk@gmail.com",
+      "mobileNo": 9374387422,
+      "salary": 34444
+    },
+    {
+      "id": 6,
+      "firstName": "rohit",
+      "lastName": "sharma",
+      "eMail": "rohit@gmail.com",
+      "mobileNo": 8374874933,
+      "salary": 20000
+    },
+    {
+      "id": 7,
+      "firstName": "Aniket",
+      "lastName": "Deshmukh",
+      "eMail": "aniket@gmail.com",
+      "mobileNo": 9834527111,
+      "salary": "45000"
+    }
+  ]
+}
