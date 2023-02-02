@@ -1,0 +1,10 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+}
+h2{
+    background-color: rgb(116, 166, 203);
+    border-radius: 4px;
+}
