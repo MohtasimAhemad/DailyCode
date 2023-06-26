@@ -1,53 +1,44 @@
 package com.example.service;
 
 import java.util.List;
-import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.model.Employee;
 import com.example.repository.EmployeeRepository;
 
+
 @Service
 public class EmployeeService {
-	
-	@Autowired
-	private  final EmployeeRepository employeeRepository;
-	
-	public EmployeeService(EmployeeRepository employeeRepository)
-	{
-		this.employeeRepository = employeeRepository;
-		
-	}
-	
-	public List<Employee> getAllEmployee()
-	{
-		return employeeRepository.findAll();
-	}
-	
+    private final EmployeeRepository employeeRepository;
 
-	public Employee getEmployeeById(String id)
-	{
-		return employeeRepository.findById(id).orElseThrow();
-	}
-	
-	public Employee createEmployee(Employee employee)
-	{
-		return employeeRepository.save(employee);
-	}
-	
-	public Employee updateEmployee(String id,Employee updateEmployee)
-	{
-		Employee employee=getEmployeeById(id);
-		employee.setName(updateEmployee.getName());
-		employee.setSalary(updateEmployee.getSalary());
-		return employeeRepository.save(employee);
-	}
-	
-	
-	public void deleteEmployee(String id)
-	{
-		employeeRepository.deleteById(id);
-	}
+    public EmployeeService(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
+
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
+    }
+
+    public Employee getEmployeeById(int id) throws Exception {
+        return employeeRepository.findById(id)
+            .orElseThrow(() -> new Exception("Employee not found with id " + id));
+    }
+
+    public Employee createEmployee(Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+    public Employee updateEmployee(int id, Employee employeeDetails) throws Exception {
+        Employee employee = getEmployeeById(id);
+
+        employee.setName(employeeDetails.getName());
+        employee.setSalary(employeeDetails.getSalary());
+
+        return employeeRepository.save(employee);
+    }
+
+    public void deleteEmployee(int id) throws Exception {
+        employeeRepository.delete(getEmployeeById(id));
+    }
 }

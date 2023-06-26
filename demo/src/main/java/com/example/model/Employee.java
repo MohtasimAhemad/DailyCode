@@ -1,9 +1,13 @@
 package com.example.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "employee")
 public class Employee {
 
-//	@Id
-	private String id;
+	@Id
+	private int id;
 	private String name;
 	private double salary;
 	
@@ -11,16 +15,16 @@ public class Employee {
 	
 	
 	
-	public Employee(String id, String name, double salary) {
+	public Employee(int id, String name, double salary) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.salary = salary;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

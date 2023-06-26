@@ -4,11 +4,11 @@
 
 export const environment = {
   production: false,
-  weatherApiBaseUrl:`https://open-weather13.p.rapidapi.com/city`,
+  weatherApiBaseUrl:'https://forecast9.p.rapidapi.com/rapidapi/forecast/',
   XRapidAPIHostHeaderName:'X-RapidAPI-Host',
-  RapidAPIHostHeaderValue:'open-weather13.p.rapidapi.com',
+  RapidAPIHostHeaderValue:'forecast9.p.rapidapi.com',
   XRapidAPIKeyHeaderName:'X-RapidAPI-Key',
-  XRapidAPIKeyHeaderValue:'4e5e192c83msh5251a03ad7594d8p16bd27jsn74349c105954'
+  XRapidAPIKeyHeaderValue:'894b14de8dmsh5b6bce0265dbf17p165527jsn0dcf777ea2f3'
 };
 
 /*

@@ -1,0 +1,58 @@
+.gingerbread .body {
+    fill: #443dcd;
+  }
+  
+  .gingerbread .eye {
+    fill: white;
+  }
+  
+  .gingerbread .mouth {
+    fill: none;
+    stroke: white;
+    stroke-width: 2px;
+  }
+  
+  .gingerbread .limb {
+    stroke: #443dcd;
+    stroke-width: 35px;
+    stroke-linecap: round;
+  }
+
+  .myDiv {
+    border: 5px outset red;
+    background-color: lightblue;
+    text-align: center;
+  }
+  .loginform{  
+    padding:10px;  
+    border:1px solid pink;  
+    border-radius:10px;  
+    width:300px;
+    margin-top:10px;  
+}  
+.formheading{  
+    background-color:red;  
+    color:white;  
+    padding:4px;  
+    text-align:center;  
+}  
+.sub{  
+background-color:red;  
+padding: 7px 40px 7px 40px;  
+color:white;  
+font-weight:bold;  
+margin-left:70px;  
+border-radius:5px;  
+}  
+
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

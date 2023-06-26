@@ -3,8 +3,7 @@ package com.example.productCrud.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "ProductDB")
-
+@Document(collection = "productdb")
 public class Product {
 	
 	@Id

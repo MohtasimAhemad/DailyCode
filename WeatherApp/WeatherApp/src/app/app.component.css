@@ -1,0 +1,38 @@
+.chart-main-container {
+    position: relative;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+  .widget-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: flex-start;
+  }
+  .widget-container > div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  .widget-container > div:focus {
+    background-color: cornflowerblue;
+  }
+  .supporting-div {
+    height: 15px;
+  }
+  .title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    z-index: 2;
+    padding-left: 10px;
+    font-size: 15px;
+    color: rgba(1, 1, 1, 0.5);
+    opacity: 1;
+  }
+  
