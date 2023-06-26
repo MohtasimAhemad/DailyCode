@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -7,27 +9,34 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Candidate {
 
 	private int enrollId;
-	private String subName;
+	private String candidateName;
+	private List<String> subjects;
 	private String score;
 	
 	
-	
-	public Candidate(int enrollId, String subName, String score) {
-		this.enrollId = enrollId;
-		this.subName = subName;
-		this.score = score;
-	}
+	public Candidate(int enrollId, String candidateName, List<String> subjects, String score) {
+	this.enrollId = enrollId;
+	this.candidateName = candidateName;
+	this.subjects = subjects;
+	this.score = score;
+}
 	public int getEnrollId() {
 		return enrollId;
 	}
 	public void setEnrollId(int enrollId) {
 		this.enrollId = enrollId;
 	}
-	public String getSubName() {
-		return subName;
+	public String getCandidateName() {
+		return candidateName;
 	}
-	public void setSubName(String subName) {
-		this.subName = subName;
+	public void setCandidateName(String candidateName) {
+		this.candidateName = candidateName;
+	}
+	public List<String> getSubjects() {
+		return subjects;
+	}
+	public void setSubjects(List<String> subjects) {
+		this.subjects = subjects;
 	}
 	public String getScore() {
 		return score;
@@ -37,8 +46,10 @@ public class Candidate {
 	}
 	@Override
 	public String toString() {
-		return "Candidate [enrollId=" + enrollId + ", subName=" + subName + ", score=" + score + "]";
+		return "Candidate [enrollId=" + enrollId + ", candidateName=" + candidateName + ", subjects=" + subjects
+				+ ", score=" + score + "]";
 	}
 	
-	
 }
+
+

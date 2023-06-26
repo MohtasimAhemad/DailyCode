@@ -9,20 +9,24 @@ import model.Candidate;
 import service.CandidateService;
 
 @RestController
+
 public class CandidateController {
 	
 	@Autowired
 	private CandidateService candidateService;
 	
+	public CandidateController(CandidateService candidateService2) {
+		this.candidateService=candidateService;
+	}
 	@GetMapping("/Candidate/{enrollId}")
 	public Candidate getById(@PathVariable int enrollId) 
 	{
 		return candidateService.searchByEnrollId(enrollId);
 	}
-	@GetMapping("/Candidate/{enrollId}")
-	public Candidate getByName(@PathVariable String subName ) 
+	@GetMapping("/Candidate/{candidateName}")
+	public Candidate getByName(@PathVariable String candidateName ) 
 	{
-		return candidateService.searchByName(subName);
+		return candidateService.searchByName(candidateName);
 	}
 
 	

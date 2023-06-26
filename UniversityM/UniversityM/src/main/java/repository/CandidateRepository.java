@@ -8,6 +8,6 @@ import model.Candidate;
 @Repository
 public interface CandidateRepository extends MongoRepository <Candidate,String>{
 	 Candidate findByEnrollId(int enrollId);
-	 Candidate findByName(String subName);
+	 Candidate findByName(String candidateName);
 
 }
