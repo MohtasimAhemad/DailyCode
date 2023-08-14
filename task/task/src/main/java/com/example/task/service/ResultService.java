@@ -31,7 +31,10 @@ public class ResultService {
     public Result getResultById(String id) {
         return resultRepository.findById(id).orElse(null);
     }
-
+public Result getResultByCandidateId(String candidateId)
+{
+    return resultRepository.findByCandidateId(candidateId);
+}
     public List<Result> getAllResults() {
         return resultRepository.findAll();
     }

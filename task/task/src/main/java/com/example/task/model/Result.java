@@ -3,15 +3,17 @@ package com.example.task.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document(collection = "results")
 public class Result {
     @Id
     private String id;
     private String candidateId;
-    private String subject;
+    private List<String> subject;
     private int marks;
 
-    public Result(String id, String candidateId, String subject, int marks) {
+    public Result(String id, String candidateId, List<String> subject, int marks) {
         this.id = id;
         this.candidateId = candidateId;
         this.subject = subject;
@@ -34,11 +36,11 @@ public class Result {
         this.candidateId = candidateId;
     }
 
-    public String getSubject() {
+    public List<String> getSubject() {
         return subject;
     }
 
-    public void setSubject(String subject) {
+    public void setSubject(List<String> subject) {
         this.subject = subject;
     }
 

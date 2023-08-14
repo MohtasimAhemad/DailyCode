@@ -2,9 +2,10 @@ package com.example.task.controller;
 
 import com.example.task.model.Result;
 import com.example.task.service.ResultService;
-import com.example.task.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,17 +43,29 @@ public class ResultController {
         resultService.deleteResult(id);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'CANDIDATE')")
+    @GetMapping("/candidate/{candidateId}")
+    public Result getResultByCandidateId(@PathVariable String candidateId) {
+        return resultService.getResultByCandidateId(candidateId);
+    }
+//    @PreAuthorize("hasAnyRole('ADMIN', 'CANDIDATE')")
+//    @GetMapping("/{id}")
+//    public Result getResultById(@PathVariable String id) {
+//        return resultService.getResultById(id);
+//    }
+    @PreAuthorize("hasAnyRole('ADMIN', 'CANDIDATE')")
     @GetMapping("/{id}")
     public Result getResultById(@PathVariable String id) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println("User: " + authentication.getName() + " | Authorities: " + authentication.getAuthorities());
+
         return resultService.getResultById(id);
     }
-
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public List<Result> getAllResults() {
         return resultService.getAllResults();
     }
 
-    // Add more endpoints as needed
 }
